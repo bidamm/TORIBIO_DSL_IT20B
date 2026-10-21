@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 
 package midterm;
 
 public class StackLinkedlist {
+=======
+package stacklinkedist;
+
+public class StackLinkedList{
+
+>>>>>>> fcfcf9d8a83487c25a484fc700e5ac2bf7cd9d69
     private class Node {
         int data;
         Node next;
 
+<<<<<<< HEAD
        
         Node(int data) {
             this.data = data;
@@ -73,3 +81,51 @@ public class StackLinkedlist {
         stack.display();
     }
 }
+=======
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    private Node front;
+    private Node rear;
+
+    public void enqueue(int value) {
+        Node newNode = new Node(value);
+
+        if (rear == null) {
+            front = rear = newNode;
+            return;
+        }
+
+        rear.next = newNode;
+        rear = newNode;
+    }
+
+    public int dequeue() {
+        if (front == null) {
+            System.out.println("Queue is empty!");
+            return -1;
+        }
+        int value = front.data;
+        front = front.next;
+
+        if (front == null) {
+            rear = null;
+        }
+        return value;
+    }
+
+    public static void main(String[] args) {
+        StackLinkedList q = new StackLinkedList();
+
+        q.enqueue(10);
+        q.enqueue(20);
+        q.enqueue(30);
+
+        System.out.println(q.dequeue()); 
+        System.out.println(q.dequeue());
+        System.out.println(q.dequeue());
+    }
+}
+>>>>>>> fcfcf9d8a83487c25a484fc700e5ac2bf7cd9d69
